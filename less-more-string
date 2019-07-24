@@ -1,0 +1,31 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>	
+	var more = '';
+	var id =1;
+	var data='Your Status has Been changed to Your Status has Been changed to Your Status has Been changed to Your Status has Been changed to Your Status has Been changed to';
+	var main_message='';
+	main_message += '<input type="hidden" id="show_hide' + id + '" value="0"/><span id="max_part' + id + '" style="display:none;">' + data;
+	main_message += '<a href="javascript:void(0)" onClick="showMore(' + id + ')" style="color:#007bff;"> Less..</a>';
+	main_message += '</span>';
+	if (data.length > 40) {
+		more += ' <a href="javascript:void(0)" onClick="showMore(' + id + ')" style="color:#007bff;"> More..</a>';
+	}
+	main_message += '<span id="min_part' + id + '">';
+	main_message += message = data.substr(0, 40) + more;
+	main_message += '</span>';
+
+ $('#displaydive').html(main_message);//append html anyware
+
+ function showMore(id){
+ 	var show_hide_status=$('#show_hide'+id).val();
+ 	if(show_hide_status==0){
+ 		$('#max_part'+id).show();
+ 		$('#min_part'+id).hide();
+ 		$('#show_hide'+id).val(1);
+ 	}else{
+ 		$('#max_part'+id).hide();
+ 		$('#min_part'+id).show();
+ 		$('#show_hide'+id).val(0);
+ 	}
+ }
+</script>
