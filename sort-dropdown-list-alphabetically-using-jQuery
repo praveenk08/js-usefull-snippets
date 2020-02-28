@@ -1,0 +1,23 @@
+
+  <select>
+    <option selected>Choose one</option>
+    <option value="3">Three</option>
+    <option value="1">One</option>
+    <option value="0">Zero</option>
+    <option value="2">Two</option>
+    <option value="8">Eight</option>
+  </select>
+
+// for acc. to dropdown text option 
+var select = jQuery('select');
+ select.html(select.find('option').sort(function(x, y) {
+   return jQuery(x).text() > jQuery(y).text() ? 1 : -1;
+ }))
+     // for acc. to dropdown value option
+  var select = jQuery('select');
+ select.html(select.find('option').sort(function(x, y) {
+   return jQuery(x).val() > jQuery(y).val() ? 1 : -1;
+ }))
+
+     
+     
